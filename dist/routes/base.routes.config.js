@@ -12,3 +12,4 @@ class BaseRoutesConfig {
     }
 }
 exports.BaseRoutesConfig = BaseRoutesConfig;
+//# sourceMappingURL=base.routes.config.js.map

@@ -17,7 +17,7 @@ app.use(cors());
 routes.push(new ProductRoutes(app));
 
 const runningMessage = `Server running at http://localhost:${port}`;
-app.get('/', (req: express.Request, res: express.Response) => {
+app.get('/api', (req: express.Request, res: express.Response) => {
     res.status(200).send(runningMessage)
 });
 

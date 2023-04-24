@@ -40,7 +40,7 @@ app.use(express_1.default.json());
 app.use((0, cors_1.default)());
 routes.push(new product_routes_config_1.ProductRoutes(app));
 const runningMessage = `Server running at http://localhost:${port}`;
-app.get('/', (req, res) => {
+app.get('/api', (req, res) => {
     res.status(200).send(runningMessage);
 });
 routes.push(new product_routes_config_1.ProductRoutes(app));
@@ -52,3 +52,4 @@ server.listen(port, () => {
 });
 // npm start
 // tsc --init
+//# sourceMappingURL=app.js.map

@@ -1,12 +1,11 @@
 import { CRUD } from "../interfaces/crud.interface";
-import { CreateProductModel } from "../models/product/create_product_model";
+import { ProductModel } from "../models/product_model";
 import mongooseService from "./mongoose.service";
 
 export class ProductService implements CRUD{
 
     Schema = mongooseService.getMongoose().Schema;
     productSchema = new this.Schema({
-        _id: String,
         name: String,
         price: Number
     }, { id: false });
@@ -17,12 +16,12 @@ export class ProductService implements CRUD{
         return 'null';
     }
 
-    async create(resource: CreateProductModel) {
+    async create(resource: ProductModel) {
         const product = new this.Product({
             ...resource,
         });
         await product.save();
-        return product;
+        return resource;
     }
 
     async list(limit: number, page: number) {
